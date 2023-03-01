@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> danh sách lớp </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <h1>Danh sách lớp</h1>
+      <a href="/from-add"> <button>Them lop</button> </a> <br>
+      <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>MaLop</th>
+          <th>NAME</th>
+          <th>SoLuong</th>
+          <th>MaGV</th>
+        </tr>
+        <% lops.forEach(item => { %>
+          <tr>
+            <td> <%= item._id %> </td>
+            <td> <%= item.maLopHoc %> </td>
+            <td> <%= item.name %> </td>
+            <td> <%= item.__v %> </td>
+            <td> <%= item.maGiangVien %> </td>
+            <td> <a href="/from-update/<%= item._id %>">update</a>|| <a href="/from-delete/<%= item._id %>">delete</a></td>
+          </tr>
+        <% }) %>
+      </table>
+  </body>
+</html>
